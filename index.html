@@ -1,271 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praya Pokharel — Cybersecurity Student</title>
+<meta name="description" content="Portfolio of Praya Pokharel, a Cybersecurity &amp; Network Technology student.">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <title>Praya Pokharel | Portfolio</title>
-
-        
-        <link rel="stylesheet" href="style.css">
-
-        
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    </head>
-
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-    <header>
+<canvas id="net-bg" aria-hidden="true"></canvas>
 
-    <nav>
+<header id="site-header">
+  <nav class="nav-wrap">
+    <a href="#home" class="logo">
+      <span class="logo-mark">PP</span>
+      <span class="logo-text">Praya&nbsp;Pokharel</span>
+    </a>
 
-        <h2 class="logo">Praya</h2>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
 
-        <ul>
+    <ul id="primary-nav" class="nav-links">
+      <li><a href="#home" data-index="00"><span class="idx">00</span>Home</a></li>
+      <li><a href="#about" data-index="01"><span class="idx">01</span>About</a></li>
+      <li><a href="#skills" data-index="02"><span class="idx">02</span>Skills</a></li>
+      <li><a href="#certificates" data-index="03"><span class="idx">03</span>Certificates</a></li>
+      <li><a href="#projects" data-index="04"><span class="idx">04</span>Projects</a></li>
+      <li><a href="#contact" data-index="05"><span class="idx">05</span>Contact</a></li>
+    </ul>
 
-            <li><a href="#home">Home</a></li>
-
-            <li><a href="#about">About</a></li>
-
-            <li><a href="#skills">Skills</a></li>
-
-            <li><a href="#projects">Projects</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-    </nav>
-
+    <div class="nav-status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span>STATUS: AVAILABLE</span>
+    </div>
+  </nav>
 </header>
 
+<main>
 
-
-    <section id="home" class="hero">
-
-    <div class="hero-text">
-
-        <h1>Hello, I'm Praya Pokharel</h1>
-
-        <h3>Cybersecurity Student</h3>
-
-        <p>
-            I love Web Development, Networking and Ethical Hacking.
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-text reveal">
+        <p class="eyebrow">SYSTEM&nbsp;/&nbsp;IDENTITY</p>
+        <h1>Praya Pokharel</h1>
+        <p class="role-line"><span class="role-key">ROLE</span>Cybersecurity Student — Network Technology</p>
+        <p class="hero-desc">
+          I build for the web and study the systems that protect it —
+          spending my time between front-end development, networking
+          fundamentals, and ethical hacking.
         </p>
 
-<div class="hero-buttons">
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="cv.pdf" class="btn btn-ghost" download>Download CV</a>
+        </div>
 
-    <a href="#projects" class="btn">
-        View Projects
-    </a>
+        <div class="social-links">
+          <a href="https://github.com/ppraya-063/protfolio_project" target="_blank" rel="noopener">
+            <span>GitHub</span><span class="arrow">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/praya-pokharel/" target="_blank" rel="noopener">
+            <span>LinkedIn</span><span class="arrow">↗</span>
+          </a>
+          <a href="https://tryhackme.com/p/Praya" target="_blank" rel="noopener">
+            <span>TryHackMe</span><span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
 
+      <div class="hero-panel reveal" style="--delay:120ms">
+        <div class="photo-orbit">
+          <div class="photo-frame">
+            <img src="images/profile.jpg" alt="Praya Pokharel">
+          </div>
+          <span class="badge-float badge-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            AVAILABLE
+          </span>
+          <span class="badge-float badge-location">
+            <span class="pin" aria-hidden="true">◎</span>
+            Kathmandu, NP
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <a href="cv.pdf" class="btn cv-btn" download>
-        Download CV
-    </a>
+  <section id="about" class="about">
+    <p class="eyebrow reveal">01 — ABOUT</p>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2>A little about me</h2>
+        <p>
+          Hello! I'm Praya Pokharel, currently pursuing a Bachelor of
+          Computer Science (Hons) specializing in Network Technology
+          and Cybersecurity.
+        </p>
+        <p>
+          I'm interested in web development, networking, Linux, and
+          ethical hacking — and I like understanding a system well
+          enough to know both how to build it and how it could be
+          broken.
+        </p>
+      </div>
 
-</div>
+      <dl class="spec-card reveal" style="--delay:100ms">
+        <div class="spec-row"><dt>Program</dt><dd>B.Sc. (Hons) Computer Science</dd></div>
+        <div class="spec-row"><dt>Specialization</dt><dd>Network Technology &amp; Cybersecurity</dd></div>
+        <div class="spec-row"><dt>Interests</dt><dd>Web Dev · Networking · Linux · Ethical Hacking</dd></div>
+        <div class="spec-row"><dt>Based in</dt><dd>Kathmandu, Nepal</dd></div>
+      </dl>
+    </div>
+  </section>
 
-<div class="social-links">
+  <section id="skills" class="skills">
+    <p class="eyebrow reveal">02 — SKILLS</p>
+    <h2 class="reveal">Proficiency scan</h2>
+    <p class="section-note reveal">Self-assessed, updated as I learn.</p>
 
-    <a href="#">
-        GitHub
-    </a>
+    <div class="skill-list" id="skill-list">
+      <div class="skill-row reveal" data-level="90">
+        <span class="skill-name">HTML</span>
+        <span class="skill-bar"><span class="skill-fill"></span></span>
+        <span class="skill-pct">90%</span>
+      </div>
+      <div class="skill-row reveal" data-level="85">
+        <span class="skill-name">CSS</span>
+        <span class="skill-bar"><span class="skill-fill"></span></span>
+        <span class="skill-pct">85%</span>
+      </div>
+      <div class="skill-row reveal" data-level="75">
+        <span class="skill-name">JavaScript</span>
+        <span class="skill-bar"><span class="skill-fill"></span></span>
+        <span class="skill-pct">75%</span>
+      </div>
+      <div class="skill-row reveal" data-level="78">
+        <span class="skill-name">Python</span>
+        <span class="skill-bar"><span class="skill-fill"></span></span>
+        <span class="skill-pct">78%</span>
+      </div>
+      <div class="skill-row reveal" data-level="70">
+        <span class="skill-name">SQL</span>
+        <span class="skill-bar"><span class="skill-fill"></span></span>
+        <span class="skill-pct">70%</span>
+      </div>
+      <div class="skill-row reveal" data-level="65">
+        <span class="skill-name">Cybersecurity</span>
+        <span class="skill-bar"><span class="skill-fill"></span></span>
+        <span class="skill-pct">65%</span>
+      </div>
+    </div>
+  </section>
 
-    <a href="#">
-        LinkedIn
-    </a>
+  <section id="certificates" class="certificates">
+    <p class="eyebrow reveal">03 — EDUCATION &amp; CERTIFICATES</p>
+    <h2 class="reveal">Education &amp; training</h2>
 
-</div>
+    <div class="cert-grid">
+      <div class="timeline reveal">
+        <h3>Education</h3>
+        <ol class="timeline-list">
+          <li>
+            <span class="tl-year">2024 — Present</span>
+            <h4>BCS (Hons), Cybersecurity &amp; Networking</h4>
+            <p>Texas College of Management &amp; IT, Lincoln University Sifal, Kathmandu</p>
+          </li>
+          <li>
+            <span class="tl-year">2022 — 2024</span>
+            <h4>+2, National Examination Board</h4>
+            <p>Global School of Science, Baneshwor, Kathmandu · GPA 3.58</p>
+          </li>
+          <li>
+            <span class="tl-year">2019 — 2022</span>
+            <h4>SLC, National Examination Board</h4>
+            <p>Kathmandu Columbus School, Buddhanagar, Kathmandu</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="cert-list reveal" style="--delay:100ms">
+        <h3>Certifications &amp; training</h3>
+
+        <div class="cert-item">
+          <h4>Python Training</h4>
+          <p>Incessant Rain Academy · 3 months</p>
+        </div>
+
+        <div class="cert-item">
+          <h4>College Professional Development Modules</h4>
+          <p>Texas College of Management &amp; IT · 15-day intensive, held each semester</p>
+          <div class="tag-row">
+            <span class="tag">Endpoint Security</span>
+            <span class="tag">Web Security</span>
+            <span class="tag">Ethical Hacking</span>
+            <span class="tag">IS Audit</span>
+            <span class="tag">C &amp; Python</span>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <h4>Capture The Flag (CTF)</h4>
+          <p>College-organized cybersecurity CTF · individual participant</p>
+        </div>
+
+        <a class="thm-card" href="https://tryhackme.com/p/Praya" target="_blank" rel="noopener">
+          <span class="thm-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 2 4 5v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V5l-8-3Z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="thm-text">
+            <span class="thm-title">TryHackMe Profile</span>
+            <span class="thm-sub">tryhackme.com/p/Praya</span>
+          </span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <p class="eyebrow reveal">04 — PROJECTS</p>
+    <h2 class="reveal">Case files</h2>
+
+    <div class="project-grid">
+
+      <article class="project-card reveal">
+        <span class="case-id">FILE_01</span>
+        <img src="images/portfolio.png" alt="Portfolio Project">
+        <h3>Portfolio Website</h3>
+        <p>A responsive personal portfolio built with HTML, CSS, and JavaScript.</p>
+        <div class="tag-row">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="--delay:80ms">
+        <span class="case-id">FILE_02</span>
+        <img src="images/login.png" alt="Login Page Design">
+        <h3>Login Page Design</h3>
+        <p>A modern, responsive login interface built with HTML and CSS.</p>
+        <div class="tag-row">
+          <span class="tag">HTML</span><span class="tag">CSS</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal" style="--delay:160ms">
+        <span class="case-id">FILE_03</span>
+        <div class="project-placeholder" aria-hidden="true">
+          <span>DB</span>
+        </div>
+        <h3>Library Management System</h3>
+        <p>A database-backed system built with Python and SQL.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">SQL</span>
+        </div>
+      </article>
 
     </div>
-
-    <div class="hero-image">
-
-        <img src="images/profile.jpg" alt="Profile Picture">
-
-    </div>
-
-</section>
-
-
-
-<section id="about" class="about">
-
-    <h2>About Me</h2>
-
-    <p>
-        Hello! I am Praya Pokharel.
-        I am currently studying Bachelor of Computer Science (Hons)
-        specializing in Network Technology and Cybersecurity.
-        
-        I am interested in Web Development, Networking,
-        Linux, and Ethical Hacking.
-    </p>
-
-</section>
-
-
-
-    <section id="skills" class="skills">
-
-    <h2>My Skills</h2>
-
-    <div class="skill-container">
-
-        <div class="skill-card">
-            HTML
-        </div>
-
-
-        <div class="skill-card">
-            CSS
-        </div>
-
-
-        <div class="skill-card">
-            JavaScript
-        </div>
-
-
-        <div class="skill-card">
-            Python
-        </div>
-
-
-        <div class="skill-card">
-            SQL
-        </div>
-
-
-        <div class="skill-card">
-            Cybersecurity
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-    <section id="projects" class="projects">
-
-    <h2>My Projects</h2>
-
-
-    <div class="project-container">
-
-
-        <div class="project-card">
-
-<img src="images/portfolio.png" alt="Portfolio Project">
-
-
-<h3>Portfolio Website</h3>
-
-<p>
-A responsive personal portfolio website
-built using HTML CSS JavaScript.
-</p>
-
-</div>
-
-
-
-        <div class="project-card">
-
-            <img src="images/login.png" alt="Login Page Design">
-
-            <h3>Login Page Design</h3>
-
-            <p>
-                A modern responsive login interface
-                with HTML and CSS.
-            </p>
-
-        </div>
-
-
-
-        <div class="project-card">
-
-            <h3>Library Management System</h3>
-
-            <p>
-                A database project using Python and SQL.
-            </p>
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-    <section id="contact" class="contact">
-
-
-    <h2>Contact Me</h2>
-
-
-    <p>
-        Email: your-email@gmail.com
-    </p>
-
-
-    <p>
-        GitHub: github.com/yourusername
-    </p>
-
-
-    <p>
-        LinkedIn: linkedin.com/in/yourprofile
-    </p>
-
-
-
-    <form>
-
-
-        <input type="text" placeholder="Your Name">
-
-
-        <input type="email" placeholder="Your Email">
-
-
-        <textarea placeholder="Your Message"></textarea>
-
-
-        <button type="submit">
-            Send Message
+  </section>
+
+  <section id="contact" class="contact">
+    <p class="eyebrow reveal">05 — CONTACT</p>
+    <h2 class="reveal">Establish contact</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <button class="contact-row" id="copy-email" type="button" data-email="your-email@gmail.com">
+          <span class="contact-key">EMAIL</span>
+          <span class="contact-val">your-email@gmail.com</span>
+          <span class="contact-action">Copy</span>
         </button>
+        <a class="contact-row" href="https://github.com/ppraya-063" target="_blank" rel="noopener">
+          <span class="contact-key">GITHUB</span>
+          <span class="contact-val">github.com/ppraya-063</span>
+          <span class="contact-action">Open ↗</span>
+        </a>
+        <a class="contact-row" href="https://linkedin.com/in/praya-pokharel" target="_blank" rel="noopener">
+          <span class="contact-key">LINKEDIN</span>
+          <span class="contact-val">linkedin.com/in/praya-pokharel</span>
+          <span class="contact-action">Open ↗</span>
+        </a>
+        <a class="contact-row" href="https://tryhackme.com/p/Praya" target="_blank" rel="noopener">
+          <span class="contact-key">TRYHACKME</span>
+          <span class="contact-val">tryhackme.com/p/Praya</span>
+          <span class="contact-action">Open ↗</span>
+        </a>
+        <p id="copy-toast" class="toast" role="status" aria-live="polite"></p>
+      </div>
 
+      <form class="contact-form reveal" id="contact-form" style="--delay:100ms" novalidate>
+        <label class="field">
+          <span>Name</span>
+          <input type="text" name="name" id="field-name" required>
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" id="field-email" required>
+        </label>
+        <label class="field">
+          <span>Message</span>
+          <textarea name="message" id="field-message" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary full-width">Send message</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
 
-    </form>
-
-
-</section>
-
-
+</main>
 
 <footer>
-
-    <p>
-        © 2026 Praya Pokharel | All Rights Reserved
-    </p>
-
+  <p>© <span id="year"></span> Praya Pokharel · Built with HTML, CSS &amp; JavaScript</p>
 </footer>
 
-
-
-    
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
