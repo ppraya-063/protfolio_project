@@ -1,15 +1,9 @@
-// =====================================================================
-// Praya Pokharel — Portfolio interactions
-// =====================================================================
-
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------------- Footer year ---------------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------------- Mobile nav toggle ---------------- */
   const navToggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('primary-nav');
 
@@ -24,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.classList.remove('active');
       });
     });
   }
 
-  /* ---------------- Header shadow/blur state on scroll ---------------- */
   const header = document.getElementById('site-header');
   const onScrollHeader = () => {
     if (!header) return;
@@ -37,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   onScrollHeader();
   window.addEventListener('scroll', onScrollHeader, { passive: true });
 
-  /* ---------------- Scroll-spy: highlight active nav link ---------------- */
   const sections = document.querySelectorAll('main section[id]');
   const navAnchors = document.querySelectorAll('.nav-links a');
 
@@ -56,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(sec => spy.observe(sec));
   }
 
-  /* ---------------- Reveal-on-scroll ---------------- */
   const revealEls = document.querySelectorAll('.reveal');
 
   if (reduceMotion || !('IntersectionObserver' in window)) {
@@ -74,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => revealObserver.observe(el));
   }
 
-  /* ---------------- Skill bars fill on view ---------------- */
   const skillRows = document.querySelectorAll('.skill-row');
 
   if (skillRows.length) {
@@ -102,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ---------------- Copy email to clipboard ---------------- */
   const copyBtn = document.getElementById('copy-email');
   const toast = document.getElementById('copy-toast');
 
@@ -121,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------------- Contact form: validate + mailto handoff ---------------- */
   const form = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
@@ -153,17 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       formStatus.classList.remove('error');
 
+      const destinationEmail = (copyBtn && copyBtn.getAttribute('data-email')) || 'pokharelpraya@example.com';
+
       const subject = encodeURIComponent('Portfolio contact from ' + nameField.value.trim());
       const body = encodeURIComponent(
         messageField.value.trim() + '\n\n— ' + nameField.value.trim() + ' (' + emailField.value.trim() + ')'
       );
-      const mailtoLink = 'mailto:your-email@gmail.com?subject=' + subject + '&body=' + body;
+      const mailtoLink = 'mailto:' + destinationEmail + '?subject=' + subject + '&body=' + body;
 
       window.location.href = mailtoLink;
       formStatus.textContent = 'Opening your mail app to send this message…';
     });
 
-    [ 'field-name', 'field-email', 'field-message' ].forEach(id => {
+    ['field-name', 'field-email', 'field-message'].forEach(id => {
       const el = document.getElementById(id);
       if (el) {
         el.addEventListener('input', () => {
@@ -175,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------------- Hero network-node canvas (signature element) ---------------- */
   const canvas = document.getElementById('net-bg');
 
   if (canvas && !reduceMotion) {
@@ -183,13 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let width, height, nodes;
     const mouse = { x: null, y: null };
 
-    const NODE_COUNT_BASE = 60;
     const LINK_DIST = 130;
     const MOUSE_DIST = 160;
 
     function resize() {
       width = canvas.width = window.innerWidth;
-      height = canvas.height = Math.max(window.innerHeight, document.body.scrollHeight * 0.5);
+      height = canvas.height = window.innerHeight;
       const count = Math.min(90, Math.floor((width * height) / 22000));
       nodes = Array.from({ length: Math.max(30, count) }, () => ({
         x: Math.random() * width,
@@ -247,9 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('resize', resize, { passive: true });
+
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.clientX;
-      mouse.y = e.clientY + window.scrollY;
+      mouse.y = e.clientY;
     }, { passive: true });
     window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
 
