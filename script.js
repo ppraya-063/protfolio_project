@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const dx = a.x - b.x, dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < LINK_DIST) {
-            ctx.strokeStyle = `rgba(73, 211, 196, ${0.14 * (1 - dist / LINK_DIST)})`;
+            ctx.strokeStyle = `rgba(201, 162, 39, ${0.14 * (1 - dist / LINK_DIST)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const dx = nodes[i].x - mouse.x, dy = nodes[i].y - mouse.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < MOUSE_DIST) {
-            ctx.strokeStyle = `rgba(242, 166, 90, ${0.22 * (1 - dist / MOUSE_DIST)})`;
+            ctx.strokeStyle = `rgba(59, 79, 115, ${0.32 * (1 - dist / MOUSE_DIST)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
 
-        ctx.fillStyle = 'rgba(73, 211, 196, 0.55)';
+        ctx.fillStyle = 'rgba(201, 162, 39, 0.55)';
         ctx.beginPath();
         ctx.arc(nodes[i].x, nodes[i].y, 1.6, 0, Math.PI * 2);
         ctx.fill();
