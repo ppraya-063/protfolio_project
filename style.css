@@ -1,19 +1,25 @@
 :root{
-  
-  --bg: #0A0A0C;
-  --surface: #141417;
-  --surface-2: #1C1C20;
-  --border: #3B4F73;
-  --border-soft: #26314A;
 
-  --text: #F2EDE2;
-  --text-dim: #A8A29B;
-  --text-faint: #6B6862;
+  /* ===== 3-color palette (per assignment spec) ===== */
+  --primary: #121212;   /* Primary — background */
+  --secondary: #FFFFFF; /* Secondary — text */
+  --accent: #00ADB5;    /* Accent — interactive highlight */
 
-  --accent: #C9A227;
-  --accent-dim: #8F7419;
-  --accent-soft: rgba(201, 162, 39, 0.12);
-  --accent-2: #3B4F73;
+  /* Every tone below is a tint/shade/opacity variant of the 3 colors
+     above, not a new color, so the palette stays at 3. */
+  --bg: var(--primary);
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-2: rgba(255, 255, 255, 0.075);
+  --border: rgba(255, 255, 255, 0.16);
+  --border-soft: rgba(255, 255, 255, 0.09);
+
+  --text: var(--secondary);
+  --text-dim: rgba(255, 255, 255, 0.66);
+  --text-faint: rgba(255, 255, 255, 0.42);
+
+  --accent-dim: rgba(0, 173, 181, 0.55);
+  --accent-soft: rgba(0, 173, 181, 0.12);
+  --accent-2: rgba(0, 173, 181, 0.75);
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -30,9 +36,9 @@ html{ scroll-behavior:smooth; }
 body{
   background-color:var(--bg);
   background-image:
-    radial-gradient(900px 560px at 14% -6%, rgba(201,162,39,.14), transparent 60%),
-    radial-gradient(700px 520px at 90% 8%, rgba(59,79,115,.14), transparent 55%),
-    radial-gradient(900px 640px at 50% 105%, rgba(201,162,39,.09), transparent 60%);
+    radial-gradient(900px 560px at 14% -6%, rgba(0,173,181,.14), transparent 60%),
+    radial-gradient(700px 520px at 90% 8%, rgba(0,173,181,.08), transparent 55%),
+    radial-gradient(900px 640px at 50% 105%, rgba(0,173,181,.09), transparent 60%);
   background-attachment:fixed;
   color:var(--text);
   font-family:var(--font-body);
@@ -94,7 +100,7 @@ header, main, footer{ position:relative; z-index:1; }
   position:sticky;
   top:0;
   z-index:50;
-  background:rgba(10,10,12,.72);
+  background:rgba(18,18,18,.72);
   backdrop-filter:blur(10px);
   border-bottom:1px solid transparent;
   transition:border-color .3s ease, background .3s ease;
@@ -102,7 +108,7 @@ header, main, footer{ position:relative; z-index:1; }
 
 #site-header.scrolled{
   border-bottom-color:var(--border);
-  background:rgba(10,10,12,.92);
+  background:rgba(18,18,18,.92);
 }
 
 .nav-wrap{
@@ -176,14 +182,14 @@ header, main, footer{ position:relative; z-index:1; }
   width:7px; height:7px;
   border-radius:50%;
   background:var(--accent);
-  box-shadow:0 0 0 0 rgba(201,162,39,.6);
+  box-shadow:0 0 0 0 rgba(0,173,181,.6);
   animation:pulse-dot 2.2s infinite;
 }
 
 @keyframes pulse-dot{
-  0%{ box-shadow:0 0 0 0 rgba(201,162,39,.5); }
-  70%{ box-shadow:0 0 0 7px rgba(201,162,39,0); }
-  100%{ box-shadow:0 0 0 0 rgba(201,162,39,0); }
+  0%{ box-shadow:0 0 0 0 rgba(0,173,181,.5); }
+  70%{ box-shadow:0 0 0 7px rgba(0,173,181,0); }
+  100%{ box-shadow:0 0 0 0 rgba(0,173,181,0); }
 }
 
 .nav-toggle{
@@ -260,8 +266,8 @@ header, main, footer{ position:relative; z-index:1; }
   transition:transform .2s ease, background .2s ease, border-color .2s ease;
 }
 
-.btn-primary{ background:var(--accent); color:#211A05; }
-.btn-primary:hover{ transform:translateY(-2px); background:#DDB749; }
+.btn-primary{ background:var(--accent); color:var(--primary); }
+.btn-primary:hover{ transform:translateY(-2px); background:rgba(0,173,181,.82); }
 
 .btn-ghost{ background:transparent; border-color:var(--border); color:var(--text); }
 .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
@@ -297,7 +303,7 @@ header, main, footer{ position:relative; z-index:1; }
   position:absolute;
   width:420px;
   height:420px;
-  background:radial-gradient(circle, rgba(201,162,39,.20), transparent 68%);
+  background:radial-gradient(circle, rgba(0,173,181,.20), transparent 68%);
   filter:blur(10px);
   z-index:-1;
 }
